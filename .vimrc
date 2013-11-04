@@ -1,0 +1,126 @@
+let mapleader=","
+set tabstop=2
+set sw=2
+set sts=2
+set tw=80
+set wrap
+set ai
+set smartindent
+set scrolloff=2
+
+" Per filetype-settings
+autocmd FileType c,cpp    setlocal tw=80 sw=4 sts=4 tabstop=4 noexpandtab
+autocmd FileType java     setlocal tw=80 foldmethod=marker
+autocmd FileType python   setlocal tw=80 expandtab
+autocmd FileType python   inoremap # X<c-h>#
+autocmd FileType html,php setlocal tw=0 cc=101 expandtab nowrap
+autocmd FileType js       setlocal tw=100 cc=101 noexpandtab
+
+" Remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+imap jk <Esc>
+imap jj <Esc><Down>
+imap kk <Esc><Up>
+imap ggg <Esc>gg
+
+" Turn off search pattern highlighting
+set nohlsearch
+
+" Mark tabs and spaces
+set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
+
+" Ripped off from Alexandru Mosoi
+set statusline=%<%f\ %y%h%m%r%=%-24.(0x%02B,%l/%L,%c%V%)\ %P
+set laststatus=2
+set wildmenu
+
+" Easy split navigation, source=vimbits.com
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Improve up/down movement on wrapped lines, source=vimbits.com
+nnoremap j gj
+nnoremap k gk
+
+" Force saving files that require root, source=vimbits.com
+cmap w!! %!sudo tee > /dev/null %
+
+" Open a new vsplit and switch to it, source=stevelosh.com
+nnoremap <leader>w <C-w>v<C-w>l
+
+" Undo works after restarting vim, source=vimbits.com
+if exists("+undofile")
+  " undofile - This allows you to use undos after exiting and restarting
+  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
+  " :help undo-persistence
+  " This is only present in 7.3+
+  if isdirectory($HOME . '/.vim/undo') == 0
+    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+  endif
+  set undodir=./.vim-undo//
+  set undodir+=~/.vim/undo//
+  set undofile
+endif
+
+" Jump to last position when reopening file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" Paste toggle so that pasted code isn't auto indented, source=vim.wikia.com
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+" Highlight the 81st column, not visible in normal terminal, visible when using
+" viewports.
+if version >= 703
+	set cc=81
+endif
+
+" Rewrap a block of text
+map <S-Q> gq
+
+" Ripped off from Cosmin Ratiu, on SO list; 30 Jun 2009
+if has("cscope")
+        " Look for a 'cscope.out' file starting from the current directory,
+        " going up to the root directory.
+        let s:dirs = split(getcwd(), "/")
+        while s:dirs != []
+                let s:path = "/" . join(s:dirs, "/")
+                if (filereadable(s:path . "/cscope.out"))
+                        execute "cs add " . s:path . "/cscope.out " . s:path . " -v"
+                        break
+                endif
+                let s:dirs = s:dirs[:-2]
+        endwhile
+
+        set csto=0	" Use cscope first, then ctags
+        set cst		" Only search cscope
+        set csverb	" Make cs verbose
+
+        nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+        nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+        nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+        nmap <C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+        nmap <C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+        nmap <C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+
+        " Open a quickfix window for the following queries.
+        set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
+endif
+
