@@ -8,5 +8,5 @@ Usage
 
 ```bash
 git clone git@github.com:NiGhTTraX/vimrc.git
-ln -s vimrc/.vimrc .vimrc
+ln -s vimrc/vimrc .vimrc
 ```
