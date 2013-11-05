@@ -8,6 +8,9 @@ set ai
 set smartindent
 set scrolloff=2
 
+" Load indentation rules and plugins according to detected filetype
+filetype plugin indent on
+
 " Per filetype-settings
 autocmd FileType c,cpp    setlocal tw=80 sw=4 sts=4 tabstop=4 noexpandtab
 autocmd FileType java     setlocal tw=80 foldmethod=marker
