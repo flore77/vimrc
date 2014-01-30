@@ -2,6 +2,8 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+syntax on
+
 let mapleader=","
 set tabstop=2
 set sw=2
