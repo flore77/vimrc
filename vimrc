@@ -1,3 +1,7 @@
+" Necessary for listchars to work in all environments.
+scriptencoding utf-8
+set encoding=utf-8
+
 let mapleader=","
 set tabstop=2
 set sw=2
