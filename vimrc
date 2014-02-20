@@ -2,6 +2,9 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+" Auto reload vimrc.
+autocmd BufWritePost .vimrc source %
+
 syntax on
 
 let mapleader=","
