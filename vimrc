@@ -26,7 +26,7 @@ autocmd FileType java     setlocal tw=80 foldmethod=marker
 autocmd FileType python   setlocal tw=80 expandtab
 autocmd FileType python   inoremap # X<c-h>#
 autocmd FileType html,php setlocal tw=0 cc=101 expandtab nowrap
-autocmd FileType js       setlocal tw=100 cc=101 noexpandtab
+autocmd FileType js       setlocal tw=100 noexpandtab
 
 " Remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
@@ -90,7 +90,7 @@ set showmode
 " Highlight the 81st column, not visible in normal terminal, visible when using
 " viewports.
 if version >= 703
-	set cc=81
+	set cc=+1
 endif
 
 " Rewrap a block of text
