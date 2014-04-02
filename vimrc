@@ -5,8 +5,6 @@ set encoding=utf-8
 " Auto reload vimrc.
 autocmd BufWritePost .vimrc source %
 
-syntax on
-
 let mapleader=","
 set tabstop=2
 set sw=2
@@ -17,7 +15,12 @@ set ai
 set smartindent
 set scrolloff=2
 
-" Load indentation rules and plugins according to detected filetype
+" Enable pathogen.
+execute pathogen#infect()
+syntax enable
+
+" Load indentation rules and plugins according to detected filetype.
+" Also required by pathogen.
 filetype plugin indent on
 
 " Per filetype-settings
