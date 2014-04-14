@@ -15,6 +15,9 @@ set ai
 set smartindent
 set scrolloff=2
 
+" Enable line numbers.
+set nu
+
 " Enable pathogen.
 execute pathogen#infect()
 syntax enable
