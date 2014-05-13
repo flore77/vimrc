@@ -55,6 +55,7 @@ set nohlsearch
 " Mark tabs and spaces
 set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
 
+" Configure bottom status line.
 set statusline=%t       " tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
 set statusline+=%{&ff}] " file format
