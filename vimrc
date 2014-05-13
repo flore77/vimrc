@@ -5,6 +5,10 @@ set encoding=utf-8
 " Auto reload vimrc.
 autocmd BufWritePost .vimrc source %
 
+" Enable modeline.
+set modeline
+set modelines=1
+
 let mapleader=","
 set tabstop=2
 set sw=2
