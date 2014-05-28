@@ -49,8 +49,9 @@ imap jj <Esc><Down>
 imap kk <Esc><Up>
 imap ggg <Esc>gg
 
-" Turn off search pattern highlighting
-set nohlsearch
+" Toggle search pattern highlighting.
+set hlsearch!
+nnoremap <F3> :set hlsearch!<CR>
 
 " Mark tabs and spaces
 set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
