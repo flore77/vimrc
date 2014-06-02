@@ -13,6 +13,7 @@ let mapleader=","
 set tabstop=2
 set sw=2
 set sts=2
+set expandtab
 set tw=80
 set wrap
 set ai
