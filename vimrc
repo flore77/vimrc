@@ -55,7 +55,7 @@ set hlsearch!
 nnoremap <F3> :set hlsearch!<CR>
 
 " ctrlp: Ignore files that are in gitignore; also much faster.
-let g:ctrlp_user_command = 'git ls-files -c -m --others %s'
+let g:ctrlp_user_command = 'git ls-files -cmo --exclude-standard %s'
 
 " Mark tabs and spaces
 set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
