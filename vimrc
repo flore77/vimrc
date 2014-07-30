@@ -40,7 +40,7 @@ autocmd FileType java     setlocal tw=80 foldmethod=marker
 autocmd FileType python   setlocal tw=80 expandtab
 autocmd FileType python   inoremap # X<c-h>#
 autocmd FileType html,php setlocal tw=0 cc=101 expandtab nowrap
-autocmd FileType javascript setlocal tw=80 sw=4 sts=4 expandtab
+autocmd FileType javascript setlocal tw=80 sw=2 sts=2 expandtab
 autocmd FileType css      setlocal tw=80 expandtab
 autocmd FileType coffee   setlocal tw=80 sw=4 sts=4 tabstop=4 expandtab
 autocmd FileType coffee   inoremap # X<c-h>#
