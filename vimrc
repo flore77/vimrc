@@ -20,6 +20,9 @@ set ai
 set smartindent
 set scrolloff=2
 
+" Enable mouse interaction.
+set mouse=a
+
 " Enable line numbers.
 set nu
 
