@@ -54,8 +54,8 @@ imap kk <Esc><Up>
 imap ggg <Esc>gg
 
 " Toggle search pattern highlighting.
-set hlsearch!
-nnoremap <F3> :set hlsearch!<CR>
+set hlsearch
+nnoremap <F3> :noh<CR>
 
 " ctrlp: Ignore files that are in gitignore; also much faster.
 let g:ctrlp_user_command = 'git ls-files -cmo --exclude-standard %s'
