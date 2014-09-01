@@ -53,6 +53,9 @@ imap jj <Esc><Down>
 imap kk <Esc><Up>
 imap ggg <Esc>gg
 
+" Select last pasted/modified text in the same visual mode
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 " Toggle search pattern highlighting.
 set hlsearch
 nnoremap <F3> :noh<CR>
