@@ -10,14 +10,24 @@ set modeline
 set modelines=1
 
 let mapleader=","
+
+" Tab length.
 set tabstop=2
 set sw=2
 set sts=2
+
+" Expand tab to spaces.
 set expandtab
+
+" Line length.
 set tw=80
 set wrap
+
+" Auto smart indentation.
 set ai
 set smartindent
+
+" Number of lines to keep visible at the top/bottom.
 set scrolloff=2
 
 " Enable mouse interaction.
@@ -48,6 +58,7 @@ autocmd FileType coffee   inoremap # X<c-h>#
 " Remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Productivity shortcuts.
 imap jk <Esc>
 imap jj <Esc><Down>
 imap kk <Esc><Up>
