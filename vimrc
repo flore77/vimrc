@@ -63,6 +63,9 @@ nnoremap <F3> :noh<CR>
 " ctrlp: Ignore files that are in gitignore; also much faster.
 let g:ctrlp_user_command = 'git ls-files -cmo --exclude-standard %s'
 
+" Toggle git diff in the signs column.
+nnoremap <leader>g :GitGutterToggle<CR>
+
 " Mark tabs and spaces
 set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
 
