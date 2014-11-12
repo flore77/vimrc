@@ -45,7 +45,8 @@ syntax enable
 filetype plugin indent on
 
 " Per filetype-settings
-autocmd FileType c,cpp      setlocal sw=4 sts=4 tabstop=4 noexpandtab
+" c/cpp modified by Deedee to match LLVM coding style
+autocmd FileType c,cpp      setlocal tw=80 sw=2 sts=2 tabstop=2 expandtab
 autocmd FileType java       setlocal foldmethod=marker
 autocmd FileType python     setlocal expandtab
 autocmd FileType python     inoremap # X<c-h>#
