@@ -77,6 +77,12 @@ let g:ctrlp_user_command = 'git ls-files -cmo --exclude-standard %s'
 " Toggle git diff in the signs column.
 nnoremap <leader>g :GitGutterToggle<CR>
 
+" NERDTree
+nnoremap <leader>n :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMapOpenSplit = "<C-x>"
+let NERDTreeMapOpenVSplit = "<C-v>"
+
 " Mark tabs and spaces
 set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
 
