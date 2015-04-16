@@ -87,7 +87,7 @@ let NERDTreeMapOpenVSplit = "<C-v>"
 set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
 
 " Configure bottom status line.
-set statusline=%t       " tail of the filename
+set statusline=%F       " full path of the file
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
 set statusline+=%{&ff}] " file format
 set statusline+=%h      " help file flag
