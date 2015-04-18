@@ -78,11 +78,17 @@ let g:ctrlp_user_command = 'git ls-files -cmo --exclude-standard %s'
 " Toggle git diff in the signs column.
 nnoremap <leader>g :GitGutterToggle<CR>
 
+" NERDTree
+nnoremap <leader>n :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMapOpenSplit = "<C-x>"
+let NERDTreeMapOpenVSplit = "<C-v>"
+
 " Mark tabs and spaces
 set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
 
 " Configure bottom status line.
-set statusline=%t       " tail of the filename
+set statusline=%F       " full path of the file
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
 set statusline+=%{&ff}] " file format
 set statusline+=%h      " help file flag
