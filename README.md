@@ -13,5 +13,5 @@ ln -s vimrc/vimrc .vimrc
 or
 
 ```bash
-git clone git@github.com:flore77/vimrc.git && mv vimrc/vimrc ~/.vimrc && rm -rf vimrc
+git clone https://github.com/flore77/vimrc.git && mv vimrc/vimrc ~/.vimrc && rm -rf vimrc
 ```
